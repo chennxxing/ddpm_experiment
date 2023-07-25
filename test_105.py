@@ -670,8 +670,9 @@ def make_ano_save_output():
             #torchvision.utils.save_image(img, filename_img)
 
             output_result = output[-1].to(device)
+            final_output = torch.vstack((img,output_result))
 
-            torch.save(output_result - img, filename_pt)
+            torch.save(final_output - img, filename_pt)
 
 
 
@@ -1356,7 +1357,7 @@ if __name__ == '__main__':
     import sys
 
     os.environ['KMP_DUPLICATE_LIB_OK'] = 'True'
-    mnist_number = 6
+    mnist_number = 0
 
     # add times new roman to mpl fonts
     #font_path = "./times new roman.ttf"
@@ -1377,6 +1378,6 @@ if __name__ == '__main__':
 
     # run different outputs based on model and dataset
 
-    make_ano_outputs()
+    #make_ano_outputs()
     #make_ano_outputs2()
-    #make_ano_save_output()
+    make_ano_save_output()
