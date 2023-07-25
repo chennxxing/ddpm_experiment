@@ -18,7 +18,7 @@ from UNet import UNetModel, update_ema_params
 torch.cuda.empty_cache()
 
 global ROOT_DIR
-ROOT_DIR = './mnist/0/'
+ROOT_DIR = './mnist/1/'
 #ROOT_DIR = './BraTC/train_dataset/1/'
 
 def train(training_dataset_loader, testing_dataset_loader, args, resume):
