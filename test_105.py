@@ -657,10 +657,10 @@ def make_ano_save_output():
             #filename = DATASET_PATH + 'final-outputs/ARGS=' + str(args["arg_num"]) + '/output_result/'+str(i)+'.png'
             #filename_img = DATASET_PATH + 'final-outputs/ARGS=' + str(args["arg_num"]) + '/output_img/' + str(i) + '.png'
             #filename_pt = DATASET_PATH + 'final-outputs/ARGS=' + str(args["arg_num"]) + '/output_pt/' + str(i) + '.pt'
-            filename_pt = DATASET_PATH + 'output/latent_train_noise/' + str(i) + '.pt'
+            filename_pt = DATASET_PATH + 'output/latent/' + str(i) + '.pt'
             output = diff.forward_backward(
                     unet, img,
-                    see_whole_sequence="from_noise",
+                    see_whole_sequence="half",
                     # t_distance=5, denoise_fn=args["noise_fn"]
                     t_distance=t_distance, denoise_fn=args["noise_fn"]
                     )
