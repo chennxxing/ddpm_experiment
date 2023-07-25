@@ -634,7 +634,7 @@ def make_ano_save_output():
 
     # t_distance = 200
     countnum = 0
-    for i in range(300):
+    for i in range(512):
 
         predictions = []
         sequences = []
@@ -1358,7 +1358,7 @@ if __name__ == '__main__':
     import sys
 
     os.environ['KMP_DUPLICATE_LIB_OK'] = 'True'
-    mnist_number = 0
+    mnist_number = 1
 
     # add times new roman to mpl fonts
     #font_path = "./times new roman.ttf"

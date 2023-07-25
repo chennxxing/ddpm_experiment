@@ -356,8 +356,10 @@ class GaussianDiffusionModel:
             with torch.no_grad():
                 out = self.sample_p(model, x, t_batch, denoise_fn)
                 x = out["sample"]
-            if see_whole_sequence:
-                seq.append(x.cpu().detach())
+            #if see_whole_sequence:
+            #    seq.append(x.cpu().detach())
+
+        seq.append(x)
 
         return x.detach() if not see_whole_sequence else seq
 
