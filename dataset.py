@@ -606,7 +606,7 @@ class MnistDataset(Dataset):
             self.image_input = np.load(ROOT_DIR+"normal_data.npy", allow_pickle=True)
             self.label_input = np.load(ROOT_DIR+"normal_label.npy", allow_pickle=True)
         else:
-            self.image_input = np.load(ROOT_DIR + "normal_validate.npy", allow_pickle=True)
+            self.image_input = np.load(ROOT_DIR + "normal_validate_data.npy", allow_pickle=True)
             self.label_input = np.load(ROOT_DIR+"normal_validate_label.npy", allow_pickle=True)
 
         self.transform = transforms.Compose(
