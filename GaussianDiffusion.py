@@ -319,7 +319,7 @@ class GaussianDiffusionModel:
     def forward_backward(
             self, model, x, see_whole_sequence="half", t_distance=None, denoise_fn="gauss",
             ):
-        assert see_whole_sequence == "whole" or see_whole_sequence == "half" or see_whole_sequence == None
+        assert see_whole_sequence == "whole" or see_whole_sequence == "half" or see_whole_sequence == None or see_whole_sequence == "from_noise"
 
         if t_distance == 0:
             return x.detach()
@@ -347,6 +347,9 @@ class GaussianDiffusionModel:
                     )
             if see_whole_sequence == "half":
                 seq.append(x.cpu().detach())
+
+            if see_whole_sequence == "from_noise":
+                x = torch.randn_like(x)
 
         for t in range(int(t_distance) - 1, -1, -1):
             t_batch = torch.tensor([t], device=x.device).repeat(x.shape[0])
