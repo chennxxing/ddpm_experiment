@@ -606,8 +606,8 @@ class MnistDataset(Dataset):
             self.image_input = np.load(ROOT_DIR+"normal_data.npy", allow_pickle=True)
             self.label_input = np.load(ROOT_DIR+"normal_label.npy", allow_pickle=True)
         else:
-            self.image_input = np.load(ROOT_DIR + "abnormal_data.npy", allow_pickle=True)
-            self.label_input = np.load(ROOT_DIR+"abnormal_label.npy", allow_pickle=True)
+            self.image_input = np.load(ROOT_DIR + "normal_test_data.npy", allow_pickle=True)
+            self.label_input = np.load(ROOT_DIR+"normal_test_label.npy", allow_pickle=True)
 
         self.transform = transforms.Compose(
             [transforms.ToTensor(),
