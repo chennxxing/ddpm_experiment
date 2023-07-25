@@ -81,7 +81,7 @@ def train(training_dataset_loader, testing_dataset_loader, args, resume):
     start_time = time.time()
     losses = []
     vlb = collections.deque([], maxlen=10)
-    iters = range(200 // args['Batch_Size']) if args["dataset"].lower() != "cifar" else range(200)
+    iters = range(600 // args['Batch_Size']) if args["dataset"].lower() != "cifar" else range(600)
     #iters = range(100 // args['Batch_Size']) if args["dataset"].lower() != "cifar" else range(150)
 
     # dataset loop
