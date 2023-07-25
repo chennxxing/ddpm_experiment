@@ -634,7 +634,7 @@ def make_ano_save_output():
 
     # t_distance = 200
     countnum = 0
-    for i in range(250):
+    for i in range(200):
 
         predictions = []
         sequences = []
