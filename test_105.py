@@ -1358,7 +1358,7 @@ if __name__ == '__main__':
     import sys
 
     os.environ['KMP_DUPLICATE_LIB_OK'] = 'True'
-    mnist_number = 1
+    mnist_number = 0
 
     # add times new roman to mpl fonts
     #font_path = "./times new roman.ttf"
