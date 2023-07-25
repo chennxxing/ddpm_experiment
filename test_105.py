@@ -641,7 +641,7 @@ def make_ano_save_output():
         masks = []
         mse_thresholds = []
 
-        rows, t_distance = 1, 500
+        rows, t_distance = 1, 200
 
         threshold = 0.3
         print(f"epoch {i}, rows @ epoch: {rows}")
