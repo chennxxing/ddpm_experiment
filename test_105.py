@@ -625,16 +625,16 @@ def make_ano_save_output():
     unet.to(device)
     unet.eval()
 
-    training_dataset, testing_dataset = dataset.init_DDSM(DATASET_PATH)
+    training_dataset, testing_dataset = dataset.init_mnist(DATASET_PATH)
 
     args["Batch_Size"] = 1
-    loader_ = dataset.init_DDSM_loader(testing_dataset, args, shuffle=False)
+    loader_ = dataset.init_mnist_loader(testing_dataset, args, shuffle=False)
     loader = dataset.cycle(loader_)
 
 
     # t_distance = 200
     countnum = 0
-    for i in range(100):
+    for i in range(512):
 
         predictions = []
         sequences = []
