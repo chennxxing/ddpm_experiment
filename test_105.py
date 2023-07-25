@@ -641,7 +641,7 @@ def make_ano_save_output():
         masks = []
         mse_thresholds = []
 
-        rows, t_distance = 1, 500
+        rows, t_distance = 1, 200
 
         threshold = 0.3
         print(f"epoch {i}, rows @ epoch: {rows}")
@@ -657,10 +657,10 @@ def make_ano_save_output():
             #filename = DATASET_PATH + 'final-outputs/ARGS=' + str(args["arg_num"]) + '/output_result/'+str(i)+'.png'
             #filename_img = DATASET_PATH + 'final-outputs/ARGS=' + str(args["arg_num"]) + '/output_img/' + str(i) + '.png'
             #filename_pt = DATASET_PATH + 'final-outputs/ARGS=' + str(args["arg_num"]) + '/output_pt/' + str(i) + '.pt'
-            filename_pt = DATASET_PATH + 'output/latent_train_noise/' + str(i) + '.pt'
+            filename_pt = DATASET_PATH + 'output/latent_train/' + str(i) + '.pt'
             output = diff.forward_backward(
                     unet, img,
-                    see_whole_sequence="from_noise",
+                    see_whole_sequence="half",
                     # t_distance=5, denoise_fn=args["noise_fn"]
                     t_distance=t_distance, denoise_fn=args["noise_fn"]
                     )
@@ -673,7 +673,7 @@ def make_ano_save_output():
             output_result = output[-1].to(device)
             final_output = torch.vstack((img,output_result))
 
-            torch.save(final_output - img, filename_pt)
+            torch.save(final_output, filename_pt)
 
 
 
