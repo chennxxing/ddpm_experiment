@@ -347,11 +347,11 @@ def main():
     loaded_model = {}
     if resume:
         if resume == 1:
-            checkpoints = os.listdir(f'./model/diff-params-ARGS={args["arg_num"]}/checkpoint')
+            checkpoints = os.listdir(ROOT_DIR+"model/diff-params-ARGS=" + str(args["arg_num"]) + "/checkpoint")
             checkpoints.sort(reverse=True)
             for i in checkpoints:
                 try:
-                    file_dir = f"./model/diff-params-ARGS={args['arg_num']}/checkpoint/{i}"
+                    file_dir = ROOT_DIR+ "model/diff-params-ARGS="+str(args['arg_num'])+"/checkpoint/" + i
                     loaded_model = torch.load(file_dir, map_location=device)
                     break
                 except RuntimeError:
